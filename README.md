@@ -12,4 +12,7 @@ Get-ChildItem | Rename-Item -NewName {$_.Name -replace $_.Name, $_.Name.ToLower(
 ```
 
 ## Downloading file from raw github content via Invoke-WebRequest (slower for downloading files)
+
+```Powershell
 Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -OutFile PowerView.ps1
+```
